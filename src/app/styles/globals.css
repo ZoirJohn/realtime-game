@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 * {
-	font-family: "Rubik";
+	font-family: "Funnel Sans";
+	font-weight: 400;
 }
 
 @import "tailwindcss";
@@ -14,4 +14,50 @@
 	--color-secondary-blue: #01c0fa;
 	--color-primary-red: #fd4755;
 	--color-secondary-red: #fb2b3a;
+}
+
+@font-face {
+	font-family: "Fontdiner";
+	src: url("../../shared/font/fontdiner/FontdinerSwanky-Regular.ttf") format("truetype");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Funnel Sans";
+	src: url("../../shared/font/funnel_sans/static/FunnelSans-Regular.ttf") format("truetype");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Funnel Sans";
+	src: url("../../shared/font/funnel_sans/static/FunnelSans-Medium.ttf") format("truetype");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Funnel Sans";
+	src: url("../../shared/font/funnel_sans/static/FunnelSans-SemiBold.ttf") format("truetype");
+	font-weight: 600;
+}
+@font-face {
+	font-family: "Funnel Sans";
+	src: url("../../shared/font/funnel_sans/static/FunnelSans-Bold.ttf") format("truetype");
+	font-weight: 700;
+}
+@font-face {
+	font-family: "Funnel Sans";
+	src: url("../../shared/font/funnel_sans/static/FunnelSans-ExtraBold.ttf") format("truetype");
+	font-weight: 800;
+}
+[data-overlay-container] {
+	flex-shrink: 0;
+	flex-basis: auto;
+	flex-grow: 1;
+}
+#root {
+	display: flex;
+	flex-direction: column;
+	height: 100dvh;
+	background: #413841;
+}
+.font-fontdiner {
+	font-family: "Fontdiner";
 }

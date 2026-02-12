@@ -5,14 +5,12 @@ import { Input } from "@heroui/input";
 import { Button } from "@heroui/button";
 import { setUsername } from "@/shared/lib/username";
 
-export default function ModalComponent({ isOpen }: { isOpen: boolean }) {
+export default function UsernameModal({ isOpen }: { isOpen: boolean }) {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(isOpen);
-	const [isLoading, setIsLoading] = useState(false);
 	const [fieldValue, setFieldValue] = useState<string>("");
 
 	const onSubmit = async (e: FormEvent) => {
 		e.preventDefault();
-		setIsLoading(true);
 		setUsername(fieldValue);
 		setIsModalOpen(false);
 	};
@@ -29,14 +27,14 @@ export default function ModalComponent({ isOpen }: { isOpen: boolean }) {
 				<ModalContent>
 					{() => (
 						<>
-							<ModalHeader className="flex flex-col gap-1">Username</ModalHeader>
+							<ModalHeader className="flex flex-col gap-1 ">Username</ModalHeader>
 							<Form className="w-full" onSubmit={onSubmit}>
 								<ModalBody className="w-full">
-									<Input isRequired isDisabled={isLoading} name="username" value={fieldValue} onChange={changeFieldValue} validate={validate} />
+									<Input isRequired name="username" value={fieldValue} onChange={changeFieldValue} validate={validate} />
 								</ModalBody>
 								<ModalFooter className="flex justify-end w-full">
-									<Button color="primary" isLoading={isLoading} type="submit">
-										Submit
+									<Button color="primary" type="submit">
+										Confirm
 									</Button>
 								</ModalFooter>
 							</Form>
