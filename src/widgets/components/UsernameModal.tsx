@@ -3,15 +3,16 @@ import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter } from "@herou
 import { Form } from "@heroui/form";
 import { Input } from "@heroui/input";
 import { Button } from "@heroui/button";
-import { setUsername } from "@/shared/lib/username";
+import { getUsername, setUsername as setUser } from "@/shared/lib/username";
 
-export default function UsernameModal({ isOpen }: { isOpen: boolean }) {
+export default function UsernameModal({ isOpen, setUsername }: { isOpen: boolean; setUsername: (value: string) => void }) {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(isOpen);
 	const [fieldValue, setFieldValue] = useState<string>("");
 
 	const onSubmit = async (e: FormEvent) => {
 		e.preventDefault();
-		setUsername(fieldValue);
+		setUser(fieldValue);
+		setUsername(getUsername() || "");
 		setIsModalOpen(false);
 	};
 	const changeFieldValue = (e: ChangeEvent<HTMLInputElement>) => {

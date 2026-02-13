@@ -9,12 +9,14 @@ import zero from "../shared/img/zero.png";
 
 export default function App() {
 	const [user, setUser] = useState<TBoxValue>(null);
-	useEffect(() => {
-		setUser(decide());
-	}, []);
+	const [username, setUsername] = useState<string>("");
 	const [xIsNext, setXIsNext] = useState(true);
 	const [squares, setSquares] = useState<TBoxValue[]>(Array(9).fill(null));
 	const [_, setIsWinnerModalOpen] = useState(true);
+
+	useEffect(() => {
+		setUser(decide());
+	}, [username]);
 
 	const winner = calculateWinner(squares);
 	function handleClick(cell: number) {
@@ -34,7 +36,7 @@ export default function App() {
 	}
 	return (
 		<main>
-			<UsernameModal isOpen={!getUsername()} />
+			<UsernameModal isOpen={!getUsername()} setUsername={(username: string) => setUsername(username)} />
 			<section className="flex items-center min-h-screen text-content1 text-5xl">
 				<ul className="bottom-10 left-15 absolute">
 					<li className="flex gap-6 mb-4">
@@ -53,6 +55,7 @@ export default function App() {
 
 				<Board handleClick={handleClick} squares={squares} />
 			</section>
+
 			<WinnerModal isOpen={winner != null} onOpenChange={() => setIsWinnerModalOpen(false)} won={winner == user} />
 		</main>
 	);
