@@ -43,11 +43,11 @@ export default function App() {
 					</li>
 					<li className="flex gap-6 mb-4">
 						<h2 className="font-fontdiner">Win:</h2>
-						<p className="font-fontdiner">1</p>
+						<p className="font-fontdiner">0</p>
 					</li>
 					<li className="flex gap-6">
 						<h2 className="font-fontdiner">Loss:</h2>
-						<p className="font-fontdiner">1</p>
+						<p className="font-fontdiner">0</p>
 					</li>
 				</ul>
 
