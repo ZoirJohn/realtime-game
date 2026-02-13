@@ -33,7 +33,7 @@ export default function App() {
 		return Math.round(Math.random()) ? "x" : "o";
 	}
 	return (
-		<>
+		<main>
 			<UsernameModal isOpen={!getUsername()} />
 			<section className="flex items-center min-h-screen text-content1 text-5xl">
 				<ul className="bottom-10 left-15 absolute">
@@ -54,6 +54,6 @@ export default function App() {
 				<Board handleClick={handleClick} squares={squares} />
 			</section>
 			<WinnerModal isOpen={winner != null} onOpenChange={() => setIsWinnerModalOpen(false)} won={winner == user} />
-		</>
+		</main>
 	);
 }
